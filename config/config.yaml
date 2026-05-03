@@ -1,0 +1,26 @@
+api:
+  base_url: "https://api.open-meteo.com/v1/forecast"
+  params:
+    latitude: 19.997454       # Nashik, IN (change to your city)
+    longitude: 73.789803
+    hourly:
+      - temperature_2m
+      - relative_humidity_2m
+      - wind_speed_10m
+      - precipitation
+    timezone: "Asia/Kolkata"
+    forecast_days: 7
+
+database:
+  type: "sqlite"            # Change to "postgresql" for Postgres
+  sqlite_path: "data/weather.db"
+  # postgresql_url: "postgresql://user:password@localhost:5432/etl_db"
+
+logging:
+  level: "INFO"
+  file: "logs/etl.log"
+  format: "%(asctime)s [%(levelname)s] %(name)s - %(message)s"
+
+scheduler:
+  enabled: True
+  interval_hours: 6         # Run every 6 hours if scheduler enabled

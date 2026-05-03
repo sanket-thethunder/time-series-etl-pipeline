@@ -1,0 +1,7 @@
+pandas>=2.0.0
+requests>=2.31.0
+SQLAlchemy>=2.0.0
+PyYAML>=6.0
+apscheduler>=3.10.0    # optional  only needed for scheduled runs
+pytest>=7.4.0
+responses>=0.25.0      # used in test_extract.py to mock HTTP calls
